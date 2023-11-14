@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 434d0494956b6dd49b942752fbda9714
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - block: {fileID: 5881188228282627625, guid: 90d8eb5fa4aae274db2d784283e62d58, type: 3}
+  - block2: {fileID: 7582508497932248220, guid: 9a3cc34ecbf6ab049a572438e5ae7181, type: 3}
+  - block3: {fileID: 2977608510693016942, guid: 0858b10470d50f5479aa09cf1ba62a40, type: 3}
+  - clock: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
