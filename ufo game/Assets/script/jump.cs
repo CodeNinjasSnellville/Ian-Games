@@ -23,7 +23,7 @@ public class jump : MonoBehaviour
     {
         if (Input.GetKeyDown("space") || Input.GetKeyDown("up"))
         {
-            player.velocity = new Vector2(0.0f, 0.0f);
+            player.velocity = new Vector2(player.velocity.x, 0.0f);
             player.AddForce(new Vector2(player.velocity.x, springforce));
 
         }
@@ -36,7 +36,7 @@ public class jump : MonoBehaviour
 
             if (Input.GetKeyDown("space") || Input.GetKeyDown("up"))
             {
-                player.velocity = new Vector2(0.0f, 0.0f);
+                player.velocity = new Vector2(player.velocity.x, 0.0f);
                 player.AddForce(new Vector2(player.velocity.x, -springforce));
 
             }
