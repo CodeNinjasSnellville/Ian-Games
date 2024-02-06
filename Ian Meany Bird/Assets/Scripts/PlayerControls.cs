@@ -7,7 +7,7 @@ public class PlayerControls : MonoBehaviour
         [Header("Game Controller Object for controlling the game")]
         public GameController gameController;
         [Header("Default Velocity")]
-        public float velocity = 1;
+        public float velocity = 5;
         //Physics for the bird
         private Rigidbody2D rb;
     //height of the bird object on the y axis
