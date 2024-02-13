@@ -35,4 +35,12 @@ public class PlayerControls : MonoBehaviour
             rb.velocity = Vector2.up * velocity;
         }
     }
+//Function where the player collides with a object
+private void OnCollisionEnter2D(Collision2D collision)
+{
+    if (collision.gameObject.tag == "HighSpike" || collision.gameObject.tag == "LowSpike" || collision.gameObject.tag == "Ground")
+        //Game is at a stopping state
+        Time.timeScale = 0;
 }
+}
+
