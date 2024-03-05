@@ -33,4 +33,8 @@ public class GameController : MonoBehaviour
     Instantiate(platform, new Vector3(Random.value * 10 - 5f, pos, 0.5f), Quaternion.identity);
     pos += 2.5f;
     }
+    //Game Over Canvas
+    [Header("Game Over UI Canvas Object")]
+    public GameObject gameOverCanvas;
+
 }
