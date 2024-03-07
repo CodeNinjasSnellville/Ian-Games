@@ -36,5 +36,11 @@ public class GameController : MonoBehaviour
     //Game Over Canvas
     [Header("Game Over UI Canvas Object")]
     public GameObject gameOverCanvas;
+    //Game over function
+    public void GameOver()
+    {
+        //Game Over Canvas is active
+        gameOverCanvas.SetActive(true);
+    }
 
 }
