@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
             //Execute SpawnPlatforms
             SpawnPlatforms();
         }
-        
+        gameOverCanvas.SetActive(false);
         
     }
     
@@ -41,6 +41,7 @@ public class GameController : MonoBehaviour
     {
         //Game Over Canvas is active
         gameOverCanvas.SetActive(true);
+        
     }
 
 }
