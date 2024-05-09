@@ -13,7 +13,12 @@ public class Shape : MonoBehaviour
     void Start()
     {
         //Rotation of the rigidbody
-
+        //at a random range
+        rb.rotation = Random.Range(of, 360f);
+        //Local scale for the hexagon
+        //equals one for all axes times
+        //ten
+        transform.localScale = Vector3.one * 10f;
     }
 
     // Update is called once per frame
