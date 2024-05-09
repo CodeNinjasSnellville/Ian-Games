@@ -14,7 +14,7 @@ public class Shape : MonoBehaviour
     {
         //Rotation of the rigidbody
         //at a random range
-        rb.rotation = Random.Range(of, 360f);
+        rb.rotation = Random.Range(0f, 360f);
         //Local scale for the hexagon
         //equals one for all axes times
         //ten
@@ -24,6 +24,15 @@ public class Shape : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Local scale equals for shrinking multiplied by
+        //axis size multiplied by game rate
+        transform.localScale -= Vector3.one * shrinkSpeed * Time.deltaTime;
+        //Local scale on x axis is less
+        //or equals to .05
+        if (transform.localScale.x <= .05f)
+        {
+            //Destroy object
+            Destroy(gameObject);
+        }
     }
 }
