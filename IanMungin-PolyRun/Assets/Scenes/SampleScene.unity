@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3fac5bcaaab794494402f8c7eed344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 6
+  jumpPower: 2
   isGrounded: 1
 --- !u!50 &1416733680
 Rigidbody2D:

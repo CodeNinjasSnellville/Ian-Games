@@ -39,8 +39,6 @@ public class PlayerControls : MonoBehaviour
             //jump power, mass, and
             //gravity
             rb.AddForce(Vector3.up * (jumpPower * rb.mass * rb.gravityScale * 20.0f));
-
-            Debug.Log("ahhhhh");
         }
     }
     //when an incoming collider makes contact
