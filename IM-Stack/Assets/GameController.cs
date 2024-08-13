@@ -27,13 +27,45 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Call New Block function
+        Newblock();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //If done is true
+        if (Done)
+        {
+            //return value
+            return;
+        }
+        //Variable time equals to the time since game startup
+        var time = Mathf.Abs(Time.realtimeSinceStartup % 2f - 1f);
+        //Variable pos1 equals last cube position
+        var pos1 = lastCube.transform.position + Vector3.up * 10f;
+        //Variable pos2 equals to the pos1 plus any level by number of 2
+        var pos2 = pos1 + ((Level % 2 == 0) ? Vector3.left : Vector3.forward) * 120;
+        //If the level is by the number of two
+        if(Level % 2 == 0)
+        {
+            //Current position of the current cube based of the 3 axis of
+            //pos2, pos1, and time
+            currentCube.transform.position = Vector3.Lerp(pos2, pos1, time);
+        }
+        else 
+        {
+            //Current position of the current cube based of the 3 axis of
+            //pos1, pos2, and time
+            currentCube.transform.position = Vector3.Lerp(pos1, pos2, time);
+        }
+        //If left mouse button is clicked
+        if (Input.GetMouseButtonDown(0))
+        {
+            //New block function
+            //is called
+            Newblock();
+        }
     }
     //New Block function to create new blocks
     //for the game
@@ -57,5 +89,35 @@ public class GameController : MonoBehaviour
             //z axis position of 0.5
             currentCube.transform.position = Vector3.Lerp(currentCube.transform.position, lastCube.transform.position, 0.5f) + Vector3.up * 5f;
         }
+        //is less than or equal to 0 or if the
+        //current cube size on the z axis is less
+        // than or equal to 0
+        if (currentCube.transform.localScale.x <= 0f ||
+            currentCube.transform.localScale.z <= 0f)
+        {
+            //Done equals to true
+            Done = true;
+            //Text is visible
+            text.GameObject.SetActive(true);
+            //Text equals to the text of the Final score
+            //and which level is played
+            text.text = "Final Score: " + Level;
+            //Start Corountine function X
+            StartCoroutine(X());
+            //Returns value
+            return;
+        }
+        //Last cube equals to the
+        //current cube
+        lastCube = currentCube;
+        //Current cube equals to the spawned
+        //last cube
+        currentCube = Instantiate(lastCube);
+        //Current cubes name equals to the
+        //level number
+        currentCube.name = Level + "";
+        //Current cube component mes renderer material
+        //set the color according to the color settings
+        currentCube.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.HSVToRGB((Level / 100f) % 1f, 1f, 1f));
     }
 }
